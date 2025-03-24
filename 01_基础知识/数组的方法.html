@@ -1,0 +1,39 @@
+<script>
+    const arr = [1,2,3,4,5];
+    // map(),根据原有数组还原一个新数组
+    // 需要一个回调函数作为参数，回调函数的返回值会成为新数组中的元素
+    // 回调函数中有三个参数：
+    // 第一个参数：当前元素，
+    // 第二个参数：当前元素的索引，
+    // 第三个参数：当前数组
+    let a =  arr.map((item,index,array)=>{
+        console.log('索引~'+index);
+        return item+1
+    })
+    console.log(a);
+    let b = ['何','惟','芳']
+    let result = b.map((item)=>{
+        return '<li>'+item+'</li>'
+    })
+    console.log(result);
+
+    // filter可以从一个数组中获得符合条件的元素，会根据回调函数的结果决定是否保留元素，true保留,false不保留
+    // 不会影响到原来的数组
+    let filterResult = arr.filter((item)=>item%2==0)
+    console.log(filterResult,filterResult);
+
+    // find可以从一个数组中获得符合条件的第一个元素
+    // reduce用来整合数组，它可以对数组中的值进行计算，最终将数组中的所有元素合并为一个值
+    // 需要两个参数：
+    // 1.回调函数（指定运算规则），有4个参数，
+    //     prev(上一次运算结果),
+    //     curr(当前值),
+    //     index(当前索引),
+    //     array(当前数组)
+    // 2.初始值，用来指定prev，如果不指定则直接从第二个元素开始计算
+    
+    let reduceResult = arr.reduce((prev,curr)=>{
+        return prev + curr
+    },1)
+    console.log(reduceResult);
+</script>

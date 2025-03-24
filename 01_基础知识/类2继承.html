@@ -1,0 +1,36 @@
+<script>
+    class Animal{
+     
+     
+        constructor(name,age){
+            this.name = name;
+            this.age = age;
+        };
+        sayHello=()=>{
+            console.log(this.name + '说你好~');
+        }   
+    }
+    
+    class Cat extends Animal{
+
+    }
+    // 子类继承父类后，将获得父类中所有的属性和方法
+    // 也可以创建同名的属性或者方法来对父类进行重写
+    class Snake extends Animal{
+        // 当在子类中重写父类的构造函数时，必须在子类构造函数中第一时间调用父类构造函数，否则会报错
+        constructor(length,name,age){
+            super(name,age) //调用父类构造函数
+            this.length = length;
+        }
+        sayHello=()=>{
+            console.log(this.name+'有'+this.length+'米长');
+        }
+}
+    const cat1 = new Cat('超级无敌可爱奶多牛少小猫咪');
+    const snake1 = new Snake(1,'黑曼巴',3);
+    cat1.sayHello()
+    snake1.sayHello()
+    console.log(snake1.name,snake1.age);
+    
+
+</script>

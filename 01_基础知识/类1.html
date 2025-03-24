@@ -1,0 +1,34 @@
+<script>
+    class Person{
+        // 类中的所有代码都会在严格模式下执行
+        //  严格模式下其中一个特点就是，函数的this不再是window，而是undefined
+        
+
+        // 注意：
+        //     在类中方法的this不是固定的
+        //      以方法的形式调用时，this就是当前实例
+        //      以函数的形式调用时，this就是undefined
+        //     在开发时，有些场景下，我们希望this是固定的，不会因为调用方式不同而改变，可使用箭头函数，则类中的this为当前实例
+        
+        fn(){
+            console.log('-->',this);
+        };
+        constructor(name,age){
+ 
+        };
+    }
+    let animal = {
+        hello:function(){
+            console.log('普通函数~~',this);
+        }
+    }
+
+    let animalFn = animal.hello;
+    animal.hello();
+    animalFn();
+    let marry = new Person()
+    let Fn = marry.fn;
+    marry.fn(); //Person
+    Fn();//undefined
+
+</script>

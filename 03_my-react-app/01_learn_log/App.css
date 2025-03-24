@@ -1,0 +1,81 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+.logs{
+  width: 800px;
+  background-color: #61dafb;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 15px;
+}
+.item{
+  background-color: azure;
+  border-radius: 10px;
+  display: flex;
+  margin: 15px 0rpx;
+  padding: 6px;
+}
+.date{
+  width: 90px;
+  border-radius: 10px;
+  background-color: beige;
+  text-align: center;
+  overflow: hidden;
+}
+.month{
+  height: 30px;
+  line-height: 30px;
+  color: aliceblue;
+ 
+  background-color: brown;
+}
+.day{
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 50px;
+}
+.content{
+  flex: auto;
+}
+.desc{
+  font-size: 16px;
+  color: #282c34;
+}
+.time{
+  color: brown;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

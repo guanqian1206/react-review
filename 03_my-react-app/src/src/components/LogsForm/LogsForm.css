@@ -1,0 +1,36 @@
+.logsForm{
+ background-color: aquamarine;
+ margin-top: 20px;
+ padding: 10px;
+}
+.formItem{
+    height: 40px;
+    line-height: 40px;
+    display: flex;
+    flex-flow: row;
+    margin: 10px 0;
+}
+.formItem input{
+    flex:auto;
+}
+.formItem label{
+    text-align: center;
+    padding: 0 10px;
+}
+.formBtn{
+    text-align: center;
+}
+.formBtn button{
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #FFFFFF;
+    font-size: 30px;
+    text-align: center;
+    border: none;
+    transition: 0.3s;
+    color: aquamarine;
+}
+.formBtn button:hover{
+    background-color:beige;
+}

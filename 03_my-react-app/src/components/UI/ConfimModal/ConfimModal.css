@@ -1,0 +1,26 @@
+.confirmModal{
+    width: 600px;
+    height: 400px;
+    background-color: deepskyblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+.text{
+    height: 150px;
+    line-height:150px ;
+}
+.buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+button{
+    padding:0 10px;
+}

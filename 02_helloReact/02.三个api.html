@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root">
+        <div>无所谓~反正这里的东西会被替换~</div>
+    </div>
+    <script src="./script/react.development.js"></script>
+    <script src="./script/react-dom.development.js"></script>
+    <script>
+        // React.createElement
+        // 用来创建一个React元素
+            // 参数：
+            // 1.元素的名称（html标签必须要小写）
+            // 2.标签中的属性
+            //     class属性需要使用className来设置
+            //     在设置事件时，属性名需要修改为驼峰命名法
+            // 3.元素的内容（子元素）
+                // 注意点：
+                //     react元素最终会通过虚拟DOM转换为真实的DOM元素
+                //     react元素一旦创建就无法修改，只能通过新创建的元素进行替换
+            // 修改react元素后，必须重新对根元素进行渲染
+            // 当调用render渲染页面时，react会自动比较两次渲染的元素，只在真实DOM中更新发生变化的部分
+            // 没发生变化的保持不变
+        const button = React.createElement('button',
+            {
+                id: 'btn',
+                type: 'button',
+                className: 'mybtn',
+                onClick:()=>{
+                    alert('弹窗~~')
+                }
+            },
+            '点击一下');
+        // ReactDOM.createRoot()用来创建react根元素，需要一个DOM元素作为参数
+        const div =  React.createElement('div',{},button)
+        const root = ReactDOM.createRoot(document.getElementById('root'))
+        // 将div渲染到根元素中
+        root.render(div)
+
+
+    </script>
+</body>
+
+</html>

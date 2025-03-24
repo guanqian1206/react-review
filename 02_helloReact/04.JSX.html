@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root">
+
+    </div>
+    <script src="./script/react.development.js"></script>
+    <script src="./script/react-dom.development.js"></script>
+    <script src="./script/babel.min.js"></script>
+    <!-- 设置js代码被babel处理 -->
+    <script type="text/babel">
+ 
+        // 命令式编程，创建一个React元素<button>我是一个按钮</button>
+        // const div = React.createElement('button', {}, '我是一个按钮')
+       
+
+        // 声明式编程，结果导向的编程
+        // 在react中可以通过JSX（JS扩展）来创React元素，JSX需要被翻译为JS代码，才能被React执行
+        //要在react中使用JSX，必须使用babel翻译
+
+
+        // JSX是React.createElement的语法糖
+        // JSX在执行之前都会被babel编译为js代码
+        const div = 
+        <div>
+            <button>我是一个按钮</button>
+        </div>
+    
+        const root = ReactDOM.createRoot(document.getElementById('root'))
+        
+        root.render(div)
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root">
+
+    </div>
+    <script src="./script/react.development.js"></script>
+    <script src="./script/react-dom.development.js"></script>
+    <script src="./script/babel.min.js"></script>
+    <!-- 设置js代码被babel处理 -->
+    <script type="text/babel">
+        // {}只能用来放js表达式，而不能放语句（if for）
+        // 在语句中可以操作JSX
+
+
+        const name = 'charlotte';
+        const lan = 'en';
+        let div;
+        let array = ['金','风','玉','露']
+        if (lan == 'en') {
+            div =
+                <div>
+                    hello,{name},
+                    {array}
+                </div>
+        } else {
+            div =
+                <div>
+                    你好,{name},
+                    {array}
+                </div>
+        }
+
+        let liArray = [];
+        liArray = array.map((item)=> {
+          return  <li>{item}</li>
+        }
+         )
+        console.log('liArray~~',liArray);
+        let list = <div>
+            {liArray}
+            </div>
+        const root = ReactDOM.createRoot(document.getElementById('root'))
+
+        root.render(list)
+
+
+    </script>
+</body>
+
+</html>

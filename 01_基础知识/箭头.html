@@ -1,0 +1,45 @@
+<script>
+    // 箭头函数中没有arguments
+    // 箭头函数中没有this，它的this是外层作用域的this,谁调用它就指向谁的this
+    // 箭头函数的this无法通过call,apply,bind修改
+    // 箭头函数无法作为构造函数,没法new
+const normalFun=function( ){
+    console.log('普通函数的arguments~',arguments);
+}
+const arrowFun = (  )=>{
+    console.log('箭头函数的arguments~',arguments);
+}
+const normalFun1=function(a,b,...arguments){ //剩余参数
+    console.log('普通函数的arguments~',arguments);
+}
+const arrowFun1 = (...arguments)=>{//剩余参数
+    console.log('箭头函数的arguments~',arguments);
+}
+normalFun(1,2,3)
+arrowFun(1,2,3)
+normalFun1(1,2,3)
+arrowFun1(1,2,3)
+const fun = {
+    hello:function(){
+        console.log('非箭头~~',this);
+    }
+}
+const fun1 = {
+    hello:()=>{
+        console.log('箭头~~',this);
+    }
+}
+const fun2 = {
+    aba:1,
+    hello:function(){
+      const  world=()=>{
+        console.log('箭头11~~',this);
+      }
+      world()
+    }
+}
+fun.hello()
+fun1.hello()
+fun2.hello()
+</script>
+

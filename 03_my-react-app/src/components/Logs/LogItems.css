@@ -1,0 +1,28 @@
+.item{
+    background-color: azure;
+ 
+    display: flex;
+    margin: 15px  0px;
+    padding: 6px;
+  }
+
+  .content{
+    flex: auto;
+  }
+  .desc{
+    font-size: 16px;
+    color: #282c34;
+  }
+  .time{
+    color: brown;
+  }
+  .delete{
+    background-color: aliceblue;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .delete:hover{
+    color: red;
+    transform: rotate(1turn);
+  }
