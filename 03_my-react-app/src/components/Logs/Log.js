@@ -25,7 +25,7 @@ const Logs = (props) => {
     }
     console.log('过滤后的数据~', filterData);
     //将数据放入JSX中
-    const logItemData = props.logsData.map((item) => <LogItems {...item} onDelLog={() => props.onDeleteLog(item.id)} />)
+    const logItemData = filterData.map((item) => <LogItems {...item} onDelLog={() => props.onDeleteLog(item.id)} />)
     // const logItemData = props.logsData.map((item) => <LogItems {...item} onDelLog={() => props.onDeleteLog(item.id)} />)
     return <Card className="logs">
         {/* new Date(year:2025,month:3,date:10,hours:14,minutes:0)   这里需要把:改成=否则会报错 */}

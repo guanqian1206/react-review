@@ -1,0 +1,29 @@
+.counter{
+    display: flex;
+}
+.reduce{
+    margin: 10px;
+    font-size: 20rem;
+    width: 30rem;
+    height: 30rem;
+    border-radius: 15rem;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add{
+    margin: 10px;
+    font-size: 25rem;
+    width: 30rem;
+    height: 30rem;
+    border-radius: 15rem;
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.number{
+    margin: 10px;
+    font-size: 20rem;
+}
