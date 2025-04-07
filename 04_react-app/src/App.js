@@ -3,7 +3,10 @@ import { useState } from 'react';
 import classes from './App.module.css'
 import Out from './Out';
 import A from './components/A组件/A'
+import B from './components/B组件/B'
 import Meals from './components/Meals/Meals'
+import Meals from './components/Meals/Meals'
+import TestContext from './store/testContext'
 const MEALS_DATA = [
     {
         id: 1,
@@ -156,6 +159,7 @@ const App = () => {
             />
 
             <A></A>
+            <B></B>
         </div>
     )
 }

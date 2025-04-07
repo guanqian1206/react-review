@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import testContext from '../../store/testContext';
+import TestContext from '../../store/testContext';
 
 const A = (props) => {
     // const [number, setRedBorder] = useState(false);
@@ -11,15 +11,15 @@ const A = (props) => {
     //  它会将context设置为回调函数的参数，通过参数就可以访问到context参数中存储的数据
 
     return (
-        <testContext.Consumer>
+        <TestContext.Consumer>
             {
                 (ctx)=>{
-                   return <div>
+                   return <div style={{  fontSize: '30px'  }}>
                     {ctx.name} - {ctx.age}
                    </div> 
                 }
             }
-        </testContext.Consumer>
+        </TestContext.Consumer>
 
     )
 }
