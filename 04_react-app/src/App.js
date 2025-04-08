@@ -5,7 +5,6 @@ import Out from './Out';
 import A from './components/A组件/A'
 import B from './components/B组件/B'
 import Meals from './components/Meals/Meals'
-import Meals from './components/Meals/Meals'
 import TestContext from './store/testContext'
 const MEALS_DATA = [
     {
@@ -108,10 +107,10 @@ const App = () => {
         const newCart = { ...cartData }
         // 减少商品数量
         meal.amount -= 1;
-        console.log('减少商品数量~~',meal.amount);
-        if(meal.amount === 0){
+        console.log('减少商品数量~~', meal.amount);
+        if (meal.amount === 0) {
             // 从购物车中移除商品
-            newCart.items.splice(newCart.items.indexOf(meal),1)
+            newCart.items.splice(newCart.items.indexOf(meal), 1)
         }
         // 减少总数
         newCart.totalAmount -= 1;
@@ -150,17 +149,22 @@ const App = () => {
         // </>
         // {/* </React.Fragment> */}
         // </Out>
+
         <div style={{ width: '750rem', overflow: 'auto' }}>
 
-            <Meals
-                mealsData={mealsData}
-                onAdd={addMealHandler}
-                onSub={subMealHandler}
-            />
-
-            <A></A>
-            <B></B>
+            <TestContext.Provider value={{ name: 'annie', age: 18 }}>
+                <Meals
+                    mealsData={mealsData}
+                    onAdd={addMealHandler}
+                    onSub={subMealHandler}
+                />
+                <A></A>
+                <TestContext.Provider value={{ name: 'charlotte', age: 18 }}>
+                    <B></B>
+                </TestContext.Provider>
+            </TestContext.Provider>
         </div>
+
     )
 }
 export default App
