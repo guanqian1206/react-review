@@ -9,7 +9,7 @@ const Meals = (props) => {
         <div className={classes.Meals}>
             <div className={ 'aaaa'}>
                 {
-                    props.mealsData.map((item) => <MealItem   meal={item} key="{item.id}" />
+                    props.mealsData.map((item) => <MealItem   meal={item} key="{item.id}" onAdd={props.onAdd}  onSub={props.onSub}/>
                     )
                 }
 

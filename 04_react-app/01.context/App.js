@@ -2,9 +2,10 @@ import React from 'react';
 import { useState } from 'react';
 import classes from './App.module.css'
 import Out from './Out';
-import FilterMeals from './components/FilterMeals/FilterMeals';
+import A from './components/A组件/A'
+import B from './components/B组件/B'
 import Meals from './components/Meals/Meals'
-import cartContext from './store/cartContext'
+import TestContext from './store/testContext'
 const MEALS_DATA = [
     {
         id: 1,
@@ -78,14 +79,6 @@ const App = () => {
         totalAmount: 0,
         totalPrice: 0,
     });
-    // 创建一个过滤meals的函数
-    const filterHandler = (keyWord) => {
-        console.log('appjs~~',keyWord);
-        const newMealsData = MEALS_DATA.filter(item =>  item.name.indexOf(keyWord)!==-1)
-        console.log('appjs~~111',newMealsData);
-        setMealsData(newMealsData)
-        console.log('appjs~~222',mealsData);
-    }
     // 向购物车中添加商品
     const addMealHandler = (meal) => {
         // meal要添加进购物车的商品
@@ -159,14 +152,17 @@ const App = () => {
 
         <div style={{ width: '750rem', overflow: 'auto' }}>
 
-            <cartContext.Provider value={{ ...cartData, addMealHandler, subMealHandler }}>
-                <FilterMeals onFilter={filterHandler}></FilterMeals>
+            <TestContext.Provider value={{ name: 'annie', age: 18 }}>
                 <Meals
                     mealsData={mealsData}
-                // onAdd={addMealHandler}
-                // onSub={subMealHandler}
+                    onAdd={addMealHandler}
+                    onSub={subMealHandler}
                 />
-            </cartContext.Provider>
+                <A></A>
+                <TestContext.Provider value={{ name: 'charlotte', age: 18 }}>
+                    <B></B>
+                </TestContext.Provider>
+            </TestContext.Provider>
         </div>
 
     )

@@ -1,0 +1,30 @@
+.searchBox{
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: beige;
+    z-index: 999;
+    border-bottom: 1px solid #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.searchLine{
+    position: relative;
+}
+.inputClass{
+    width: 650rem;
+    height: 30px;
+    border-radius: 15px;
+    padding-left: 25px;
+}
+.serchIcon{
+    font-size: 16px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+ 

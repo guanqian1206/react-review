@@ -1,19 +1,16 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useState } from 'react';
 import classes from './Counter.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons'
-import cartContext from '../../../store/cartContext'
 const Counter = (props) => {
     // const [number, setRedBorder] = useState(false);
-    const ctx = useContext(cartContext);
-  
+ 
     const addButtonHandler = ()=>{
-        ctx.addMealHandler(props.meal)
-  
+        props.onAdd(props.meal)
     }
     const subButtonHandler = ()=>{
-        ctx.subMealHandler(props.meal)
+        props.onSub(props.meal)
     }
     return (
 

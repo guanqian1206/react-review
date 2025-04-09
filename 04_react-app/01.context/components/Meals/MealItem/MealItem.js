@@ -27,7 +27,7 @@ const MealItem = (props) => {
             <div className= {classes.rightBottom} >
                 <span className= {classes.price} >{props.meal.price}</span>
                 <div className= {classes.num} >
-                    <Counter number={props.meal.amount}  meal={props.meal} ></Counter>
+                    <Counter number={props.meal.amount} onAdd={props.onAdd} meal={props.meal} onSub={props.onSub}></Counter>
                 </div>
             </div>
         </div>
