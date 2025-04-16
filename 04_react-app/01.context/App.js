@@ -11,7 +11,7 @@ const MEALS_DATA = [
         id: 1,
         name: 'ham1',
         desc: 'Juicy 100% beef patty hugged by melted cheddar, crowned with crisp lettuce and tangy house sauce – where every bite is a flavor explosion!',
-        price: '35',
+        price: 35,
 
         img: '/img/meals/1.png'
         // /img/meals/1.png
@@ -20,7 +20,7 @@ const MEALS_DATA = [
         id: 2,
         name: 'ham2',
         desc: 'Grass-fed beef seared to caramelized perfection, oozing savory juices',
-        price: '23',
+        price: 23,
 
         img: '/img/meals/2.png'
     },
@@ -28,7 +28,7 @@ const MEALS_DATA = [
         id: 3,
         name: 'ham3',
         desc: 'Crispy onion rings meet velvety aged cheddar melt',
-        price: '26',
+        price: 26,
 
         img: '/img/meals/3.png'
     },
@@ -36,7 +36,7 @@ const MEALS_DATA = [
         id: 4,
         name: 'ham4',
         desc: 'Smoked paprika aioli dripping down toasted brioche buns Each layer builds a symphony of smoky, creamy, and umami notes that lingers deliciously.',
-        price: '58',
+        price: 58,
 
         img: '/img/meals/4.png'
     },
@@ -44,7 +44,7 @@ const MEALS_DATA = [
         id: 5,
         name: 'ham5',
         desc: 'Smoked paprika aioli dripping down toasted brioche buns Each layer builds a symphony of smoky, creamy, and umami notes that lingers deliciously.',
-        price: '68',
+        price: 68,
 
         img: '/img/meals/5.png'
     },
@@ -52,7 +52,7 @@ const MEALS_DATA = [
         id: 6,
         name: 'ham6',
         desc: 'Smoked paprika aioli dripping down toasted brioche buns Each layer builds a symphony of smoky, creamy, and umami notes that lingers deliciously.',
-        price: '88',
+        price: 88,
 
         img: '/img/meals/6.png'
     },
@@ -60,7 +60,7 @@ const MEALS_DATA = [
         id: 7,
         name: 'ham7',
         desc: 'Smoked paprika aioli dripping down toasted brioche buns Each layer builds a symphony of smoky, creamy, and umami notes that lingers deliciously.',
-        price: '88',
+        price: 88,
 
         img: '/img/meals/7.png'
     },
