@@ -13,7 +13,9 @@
     width: 100px;
 }
 
-.rightBox {}
+.rightBox {
+    flex: auto;
+}
 
 .name {
     font-size: 30rem;

@@ -23,7 +23,7 @@ const MealItem = (props) => {
         </div>
         <div className= {classes.rightBox} >
             <h2 className= {classes.name} >{props.meal.name}</h2>
-            <p className= {classes.desc} >{props.meal.desc}</p>
+            {props.noDesc?null:<p className= {classes.desc} >{props.meal.desc}</p>}
             <div className= {classes.rightBottom} >
                 <span className= {classes.price} >{props.meal.price}</span>
                 <div className= {classes.num} >
