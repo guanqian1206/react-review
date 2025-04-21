@@ -12,6 +12,9 @@ const cartContext = React.createContext({
     },
     subMealHandler:()=>{
         
-    }
+    },
+    clearCart:()=>{
+        
+    },
 })
 export default cartContext;

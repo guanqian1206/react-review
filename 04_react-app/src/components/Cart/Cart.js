@@ -8,21 +8,31 @@ const Cart = (props) => {
     const ctx = React.useContext(cartContext);
     // 添加一个state来设置详情是否显示
     const [showDetail,setShowDetail] = React.useState(false);
+    // 添加一个state来设置结账页是否显示
     const [showCheckout,setShowCheckout] = React.useState(false);
     const showCartHandler = () => {
-        if(ctx.totalAmount===0) return;
+        if(ctx.totalAmount===0) {
+            setShowDetail(false);
+            return
+        };
         setShowDetail(prevState=>!prevState);
     }
     const showCheckoutHandler = () => {
-        if(ctx.totalAmount===0) return;
+        if(ctx.totalAmount===0) {
+            setShowCheckout(false);
+            return
+        };
         setShowCheckout(prevState=>!prevState);
+    }
+    const hideCheckoutHandler = () => {
+        setShowCheckout(false);
     }
     return (
         // 现在将滚动条设置给Meals
         <div className={classes.cart} onClick={showCartHandler}>
             
-            {showCheckout && <Checkout />}
-            {showDetail && <CartDetails/>}
+            {showCheckout && <Checkout onHide={hideCheckoutHandler} />}
+            {showDetail  && <CartDetails/>}
             
             <div className={classes.left} >
                 <div className={classes.icon}>

@@ -7,6 +7,7 @@ import Meals from './components/Meals/Meals'
 import cartContext from './store/cartContext'
 import Cart from './components/Cart/Cart';
 import BackDrop from './components/UI/Backdrop/Backdrop';
+ 
 const MEALS_DATA = [
     {
         id: 1,
@@ -130,6 +131,21 @@ const App = () => {
         newCart.totalPrice -= meal.price;
         setCartData(newCart);
     }
+
+    const clearCart = () => {
+        // 对购物车进行浅复制
+        const newCart = { ...cartData }
+        newCart.items.forEach(item => {
+           delete item.amount  
+        })
+        // 清空购物车
+        newCart.items = [];
+        // 清空商品数量
+        newCart.totalAmount = 0;
+        // 清空商品总价
+        newCart.totalPrice = 0;
+        setCartData(newCart);
+    }
     const changeBorder = () => {
         setRedBorder(true)
     }
@@ -164,7 +180,7 @@ const App = () => {
 
 
 
-        <cartContext.Provider value={{ ...cartData, addMealHandler, subMealHandler }}>
+        <cartContext.Provider value={{ ...cartData, addMealHandler, subMealHandler,clearCart}}>
             <div style={{ width: '750rem', overflow: 'auto' }}> 
             <FilterMeals onFilter={filterHandler}></FilterMeals>
             <Meals
@@ -172,7 +188,7 @@ const App = () => {
 
             />
             <Cart /> 
-            {/* <BackDrop/> */}
+    
             </div>
         </cartContext.Provider >
 

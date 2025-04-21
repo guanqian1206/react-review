@@ -1,0 +1,63 @@
+.BarBox {
+    width: 700rem;
+    display: flex;
+    height: 80rem;
+    justify-content: space-between;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: black;
+    align-items: center;
+    bottom: 0px;
+    border-radius: 20px;
+    z-index: 9999;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    width: 30rem;
+    position: relative;
+}
+.totalAmount{
+    position: absolute;
+    right: -10rem;
+    top: -10rem;
+    font-size: 20rem;
+    color: #fff;
+    z-index: 999;
+    width: 50rem;
+    height: 50rem;
+    line-height: 50rem;
+    background: red;
+    border-radius: 25rem;
+    text-align: center;
+}
+ 
+.icon img {
+    width: 100%;
+}
+.totalPrice{
+    color: #fff;
+    font-size: 30rem;
+}
+.btn{
+    border: none;
+    background-color: #FCBF49;
+    width: 200rem;
+    border-radius: 40rem;
+    height: 80rem;
+    font-size: 30rem;
+}
+.noProduct{
+    font-size: 30rem;
+    color: #fff;
+ 
+}
+.Disabled{
+    background-color: #eee;
+}
