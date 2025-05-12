@@ -1,0 +1,30 @@
+.detailBox{
+    width: 100%;
+    background-color: #ffffff;
+    position: absolute;
+    bottom: 0rem;
+    padding-bottom:120rem ;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+h2{
+    font-size: 30rem;
+    color: black;
+    font-weight: bold;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20rem;
+}
+.clear{
+    font-size: 25rem;
+    color: #aaa;
+}
+.mealsList{
+    max-height: 900rem;
+    overflow: auto;
+}
