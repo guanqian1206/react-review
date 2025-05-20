@@ -1,0 +1,11 @@
+.Meals{
+    /* background-color:beige; */
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    padding-bottom: 120rem;
+    overflow: auto;
+
+}

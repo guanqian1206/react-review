@@ -1,0 +1,36 @@
+.ConfirmOuter{
+    z-index: 9999;
+}
+.confirm{
+    width: 700rem;
+    height: 300rem;
+    background-color: aliceblue;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+    border-radius: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.confirmText{
+    font-size: 30rem;
+    text-align: center;
+}
+.buttons{
+    display: flex;
+    justify-content: space-around;
+}
+.cancelBtn , .confirmBtn{
+    border: 1px solid #ccc;
+    width: 150rem;
+    background-color: #ffffff;
+    height: 60rem;
+    border-radius: 15rem;
+}
+.confirmBtn{
+    background-color: #FCBF49;
+}
