@@ -9,7 +9,7 @@ const Counter = (props) => {
     const ctx = useContext(cartContext);
   
     const addButtonHandler = ()=>{
-        ctx.addMealHandler(props.meal)
+        ctx.cartDispatch(props.meal)
   
     }
     const subButtonHandler = ()=>{

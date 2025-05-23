@@ -7,12 +7,34 @@ import Meals from './components/Meals/Meals'
 import cartContext from './store/cartContext'
 import Cart from './components/Cart/Cart';
 import BackDrop from './components/UI/Backdrop/Backdrop';
-const cartReducer = (state, action) => {    
+const cartReducer = (cartData, action) => {    
+    // meal要添加进购物车的商品
+    // 对购物车进行浅复制
+    const newCart = { ...cartData }
     switch(action.type){
         default:
-            return state;
+            return cartData;
         case 'ADD':
-        return 
+   
+  
+        // 判断购物车中是否存在该商品
+        if (newCart.items.indexOf(action.meal) === -1) {
+            // 将meal添加到购物车中
+            newCart.items.push(action.meal);
+            // 修改商品数量
+            action.meal.amount = 1;
+        } else {
+            // 增加商品数量
+            action.meal.amount += 1;
+        }
+        // 增加总数
+        newCart.totalAmount += 1;
+        console.log('totalPrice~~11',typeof newCart.totalPrice,newCart.totalPrice);
+        // 增加总价
+        newCart.totalPrice = newCart.totalPrice + action.meal.price;
+ 
+        console.log('totalPrice~~22',newCart.totalPrice);
+        return newCart;
     }
     
 
@@ -196,7 +218,7 @@ const App = () => {
 
 
 
-        <cartContext.Provider value={{ ...cartData, addMealHandler, subMealHandler,clearCart}}>
+        <cartContext.Provider value={{ ...cartData, cartDispatch}}>
             <div style={{ width: '750rem', overflow: 'auto' }}> 
             <FilterMeals onFilter={filterHandler}></FilterMeals>
             <Meals
