@@ -20,7 +20,7 @@ const CartDetails = (props) => {
         setShowConfirm(false);
     }
     const confirmHandler = () => {
-        ctx.clearCart();
+        ctx.cartDispatch({type:'CLEAR',meal:props.meal});
         setShowConfirm(false);
     }
     return (

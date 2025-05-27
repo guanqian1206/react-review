@@ -13,7 +13,7 @@ const Counter = (props) => {
   
     }
     const subButtonHandler = ()=>{
-        ctx.subMealHandler(props.meal)
+        ctx.cartDispatch({type:'REMOVE',meal:props.meal})
     }
     return (
 
