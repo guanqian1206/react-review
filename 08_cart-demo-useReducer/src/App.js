@@ -128,8 +128,11 @@ const App = () => {
   const [redBorder, setRedBorder] = useState(false);
   // 模拟一组数据
   const [mealsData, setMealsData] = useState(MEALS_DATA);
-
-  const [cartReducer, cartDispatch] = useReducer(cartStateReducer, {
+  // cartData初始值是
+  // {items: [],
+  // totalAmount: 0,
+  // totalPrice: 0,}   cartStateReducer是cartDispatch调用的函数
+  const [cartData, cartDispatch] = useReducer(cartStateReducer, {
     items: [],
     totalAmount: 0,
     totalPrice: 0,
@@ -139,11 +142,11 @@ const App = () => {
   // 1.商品[] items
   // 2.商品总数（totalAmount）
   // 3.商品总价（totalPrice）
-  const [cartData, setCartData] = useState({
-    items: [],
-    totalAmount: 0,
-    totalPrice: 0,
-  });
+  // const [cartData, setCartData] = useState({
+  //   items: [],
+  //   totalAmount: 0,
+  //   totalPrice: 0,
+  // });
   // 创建一个过滤meals的函数
   const filterHandler = (keyWord) => {
     console.log("appjs~~", keyWord);
@@ -155,66 +158,66 @@ const App = () => {
     console.log("appjs~~222", mealsData);
   };
   // 向购物车中添加商品
-  const addMealHandler = (meal) => {
-    // meal要添加进购物车的商品
-    // 对购物车进行浅复制
-    const newCart = { ...cartData };
-    // 判断购物车中是否存在该商品
-    if (newCart.items.indexOf(meal) === -1) {
-      // 将meal添加到购物车中
-      newCart.items.push(meal);
-      // 修改商品数量
-      meal.amount = 1;
-    } else {
-      // 增加商品数量
-      meal.amount += 1;
-    }
-    // 增加总数
-    newCart.totalAmount += 1;
-    console.log(
-      "totalPrice~~11",
-      typeof newCart.totalPrice,
-      newCart.totalPrice
-    );
-    // 增加总价
-    newCart.totalPrice = newCart.totalPrice + meal.price;
+  // const addMealHandler = (meal) => {
+  //   // meal要添加进购物车的商品
+  //   // 对购物车进行浅复制
+  //   const newCart = { ...cartData };
+  //   // 判断购物车中是否存在该商品
+  //   if (newCart.items.indexOf(meal) === -1) {
+  //     // 将meal添加到购物车中
+  //     newCart.items.push(meal);
+  //     // 修改商品数量
+  //     meal.amount = 1;
+  //   } else {
+  //     // 增加商品数量
+  //     meal.amount += 1;
+  //   }
+  //   // 增加总数
+  //   newCart.totalAmount += 1;
+  //   console.log(
+  //     "totalPrice~~11",
+  //     typeof newCart.totalPrice,
+  //     newCart.totalPrice
+  //   );
+  //   // 增加总价
+  //   newCart.totalPrice = newCart.totalPrice + meal.price;
 
-    console.log("totalPrice~~22", newCart.totalPrice);
-    setCartData(newCart);
-  };
+  //   console.log("totalPrice~~22", newCart.totalPrice);
+  //   setCartData(newCart);
+  // };
   // 向购物车中减少商品
-  const subMealHandler = (meal) => {
-    // meal要添加进购物车的商品
-    // 对购物车进行浅复制
-    const newCart = { ...cartData };
-    // 减少商品数量
-    meal.amount -= 1;
-    console.log("减少商品数量~~", meal.amount);
-    if (meal.amount === 0) {
-      // 从购物车中移除商品
-      newCart.items.splice(newCart.items.indexOf(meal), 1);
-    }
-    // 减少总数
-    newCart.totalAmount -= 1;
-    // 减少总价
-    newCart.totalPrice -= meal.price;
-    setCartData(newCart);
-  };
+  // const subMealHandler = (meal) => {
+  //   // meal要添加进购物车的商品
+  //   // 对购物车进行浅复制
+  //   const newCart = { ...cartData };
+  //   // 减少商品数量
+  //   meal.amount -= 1;
+  //   console.log("减少商品数量~~", meal.amount);
+  //   if (meal.amount === 0) {
+  //     // 从购物车中移除商品
+  //     newCart.items.splice(newCart.items.indexOf(meal), 1);
+  //   }
+  //   // 减少总数
+  //   newCart.totalAmount -= 1;
+  //   // 减少总价
+  //   newCart.totalPrice -= meal.price;
+  //   setCartData(newCart);
+  // };
 
-  const clearCart = () => {
-    // 对购物车进行浅复制
-    const newCart = { ...cartData };
-    newCart.items.forEach((item) => {
-      delete item.amount;
-    });
-    // 清空购物车
-    newCart.items = [];
-    // 清空商品数量
-    newCart.totalAmount = 0;
-    // 清空商品总价
-    newCart.totalPrice = 0;
-    setCartData(newCart);
-  };
+  // const clearCart = () => {
+  //   // 对购物车进行浅复制
+  //   const newCart = { ...cartData };
+  //   newCart.items.forEach((item) => {
+  //     delete item.amount;
+  //   });
+  //   // 清空购物车
+  //   newCart.items = [];
+  //   // 清空商品数量
+  //   newCart.totalAmount = 0;
+  //   // 清空商品总价
+  //   newCart.totalPrice = 0;
+  //   setCartData(newCart);
+  // };
   const changeBorder = () => {
     setRedBorder(true);
   };
